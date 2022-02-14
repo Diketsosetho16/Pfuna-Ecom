@@ -6,8 +6,8 @@ deploys:
   - name: pfuna
     region: EUROPE-WEST1-B
     instance_group: Pfuna
-    instance_template_base: pfuna-31258e
-    instance_template: my-app-${{GITHUB_RUN_NUMBER}}-${{GITHUB_SHA}}
+    instance_template_base: pfuna
+    instance_template: pfuna-${{GITHUB_RUN_NUMBER}}-${{GITHUB_SHA}}
     cloud_init: cloud-init.yml # see example dir
     labels: # will also have gitsha from common section
       version: ${{APP_VERSION}}
