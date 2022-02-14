@@ -3,10 +3,10 @@ common:
     gitsha: ${{GITHUB_SHA}}
 
 deploys:
-  - name: my-app-deploy
-    region: us-central1
-    instance_group: my-app-instance-group
-    instance_template_base: my-app-instance-template-base
+  - name: pfuna
+    region: EUROPE-WEST1-B
+    instance_group: Pfuna
+    instance_template_base: pfuna-31258e
     instance_template: my-app-${{GITHUB_RUN_NUMBER}}-${{GITHUB_SHA}}
     cloud_init: cloud-init.yml # see example dir
     labels: # will also have gitsha from common section
