@@ -1,0 +1,19 @@
+common:
+  labels:
+    gitsha: ${{GITHUB_SHA}}
+
+deploys:
+  - name: pfuna
+    region: EUROPE-WEST1-B
+    instance_group: pfuna-group
+    instance_template_base: pfuna
+    instance_template: pfuna-${{GITHUB_RUN_NUMBER}}-${{GITHUB_SHA}}
+    cloud_init: cloud-init.yml # see example dir
+    labels: # will also have gitsha from common section
+      version: ${{APP_VERSION}}
+    tags:
+      - my-tag123
+    update_policy:
+      min_ready_sec: 30
+
+delete_instance_templates_after: false
