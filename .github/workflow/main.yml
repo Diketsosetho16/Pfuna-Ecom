@@ -1,2 +1,16 @@
-- name: Google Cloud Compute Engine Deploy
-  uses: mattes/gce-deploy-action@v5.0.0
+on: push
+name: Deploy website on push
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2
+
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        server: ftp://34.79.175.50
+        username: bitnami
+        password: ${{ secrets.password }}
