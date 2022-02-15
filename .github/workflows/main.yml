@@ -15,7 +15,7 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        server: ftp://34.79.175.50
+        server: sftp://34.79.175.50
         username: bitnami
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
