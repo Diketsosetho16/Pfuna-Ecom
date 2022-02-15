@@ -18,5 +18,10 @@ jobs:
         server: sftp://34.79.175.50
         username: bitnami
         password: ${{ secrets.FTP_PASSWORD }}
+<<<<<<< HEAD
         protocol: sftp
         port: 22
+=======
+        protocol: ftps
+        port: 443
+>>>>>>> 1cd6608bb2169601407a3d50505c90779b0b968d
