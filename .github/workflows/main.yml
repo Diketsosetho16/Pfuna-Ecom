@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - master
+
 name: Deploy website on push
 jobs:
   web-deploy:
@@ -10,10 +11,12 @@ jobs:
     steps:
     - name: Get latest code
       uses: actions/checkout@v2
-    
+
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        server: ftp://34.111.241.121
+        server: ftp://34.79.175.50
         username: bitnami
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        port: 443
