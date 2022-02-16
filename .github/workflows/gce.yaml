@@ -21,8 +21,8 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCE_PROJECT }}
-  GCE_INSTANCE: bitnami-lampstack-5d51  # TODO: update to instance name
-  GCE_INSTANCE_ZONE: europe-west1-b   # TODO: update to instance zone
+  GCE_INSTANCE: ${{ secrets.GCE_INSTANCE }}  # TODO: update to instance name
+  GCE_INSTANCE_ZONE: ${{ secrets.GCE_INSTANCE_ZONE }}   # TODO: update to instance zone
 
 jobs:
   setup-build-publish-deploy:
