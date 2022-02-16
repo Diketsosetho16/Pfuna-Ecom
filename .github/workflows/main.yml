@@ -18,5 +18,4 @@ jobs:
         server: ftp://34.79.175.50
         username: bitnami
         password: ${{ secrets.FTP_PASSWORD }}
-        port: 80
 
